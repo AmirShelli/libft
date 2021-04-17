@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int ft_isspace(char c)
 {
 	return (c == ' ');
@@ -7,10 +8,8 @@ int ft_isspace(char c)
 
 void ft_skipstr(char **str, int (*ft_is)(char c), int check)
 {
-	while(**str && (ft_is(**str) - check))
-	{
+	while(**str && (ft_is(**str) - check)) //0-1 = true, 1-1 = false
 		(*str)++;
-	}
 }
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
@@ -18,9 +17,10 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
     unsigned int i;
 
     i = 0;
-    while ((i < n) && (src[i])) 
+    while ((i < n) && (*src)) 
     {
-        dest[i] = src[i];
+        dest[i] = *src;
+		src++;
         i++;
     }
     dest[i] = '\0';
@@ -58,25 +58,42 @@ int ft_fwordlen(char* str)
 char **ft_split(char* str)
 {
   char** result = (char **)malloc(ft_words(str));
-  int i = 0;
+  char** aux;
+  int i;
+
+  aux = result;
+  i = 0;
   while(ft_words(str))
   {
-    ft_skipstr(&str, &ft_isspace, 0);
-    
+    ft_skipstr(&str, &ft_isspace, 0); 
+
 	if(ft_words(str))
 	{
-		result[i] = malloc(ft_fwordlen(str) + 1);
-    	ft_strncpy(result[i], str, ft_fwordlen(str));
+		*result = (char *)malloc(ft_fwordlen(str) + 1);
+    	ft_strncpy(*result, str, ft_fwordlen(str));
     	ft_skipstr(&str, &ft_isspace, 1);
-		i++;
+		printf("%s\n",  *result);
+		result++;
 	}
   }
-  return (result);
+  return (aux);
+}
+
+void disp_arr(char **arr, int n)
+{
+	int i = 0;
+
+	while (i < n)
+	{
+		printf("%s\n",  arr[i]);
+		i++;
+	}
 }
 
 int main()
 {
-	char *str = "hello world I am Here   to tes Ify5 YO$$.";
-	printf("%d->%s|%s|%s\n", ft_words(str), (ft_split(str))[0], 
-		(ft_split(str))[3], (ft_split(str))[8]);
+	char *str = " 5 hello l hey ";
+	char** result = ft_split(str);
+	printf("number of words %d\n", ft_words(str));
+	disp_arr(result, ft_words(str));
 }
