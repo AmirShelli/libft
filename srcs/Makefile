@@ -1,7 +1,7 @@
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-INCLUDE = -I libft.h
-SRCS = (wildcar *.c)
+INCLUDES = -I libft.h
+SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 NAME = libft.a
 .PHONY: all clean fclean $(NAME)
