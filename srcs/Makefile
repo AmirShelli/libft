@@ -1,6 +1,5 @@
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-INCLUDES = -I libft.h
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 NAME = libft.a
@@ -8,12 +7,12 @@ NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJS) 
-         ar rcs $(NAME) $(OBJS) 
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS) 
 .c.o:
-        $(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 clean:
-        rm -f $(OBJS)
+	rm -f $(OBJS)
 fclean: clean
 	rm -f $(NAME)
 re: fclean all

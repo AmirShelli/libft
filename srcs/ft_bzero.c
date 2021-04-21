@@ -7,8 +7,8 @@ void ft_bzero(void *s, size_t n)
 	while( i <= n)
 	{
 		((char *)s)[i] = '\0';
-		((char *)s)++;
+		(s)++;
 		i++;
 	}
-	return (((char *)s));
+	return (s);
 }
