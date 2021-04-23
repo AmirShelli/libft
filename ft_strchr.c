@@ -4,5 +4,5 @@ char *ft_strchr(const char *src, int c)
 	{
 		src++;
 	}
-	return (src);
+	return ((char *)src);
 }

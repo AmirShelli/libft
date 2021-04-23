@@ -30,7 +30,7 @@ char			*ft_itoa(int n)
 	if (n < 0)
 		str[0] = '-';
 	if (n == 0)
-		return (str[0] = '0');
+		str[0] = '0';
 	while (n)
 	{
 		str[--size] = n % 10 + '0';

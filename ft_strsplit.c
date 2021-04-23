@@ -1,17 +1,17 @@
 #include "libft.h"
 
-int ft_isspace(char c)
+static int ft_isspace(char c)
 {
 	return (c == ' ');
 }
 
-void ft_skipstr(char **str, int (*ft_is)(char c), int check)
+static void ft_skipstr(char **str, int (*ft_is)(char c), int check)
 {
 	while(**str && (ft_is(**str) - check)) //0-1 = true, 1-1 = false
 		(*str)++;
 }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+static char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
     unsigned int i;
 
@@ -26,7 +26,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
     return (dest);
 }
 
-int ft_words(char* str)
+static int ft_words(char* str)
 {
   int result = 0;
   
@@ -43,7 +43,7 @@ int ft_words(char* str)
   return (result);
 }
 
-int ft_fwordlen(char* str)
+static int ft_fwordlen(char* str)
 {
 	int result = 0;
 	while (*str && *str != ' ')

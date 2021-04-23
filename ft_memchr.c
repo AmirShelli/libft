@@ -6,5 +6,5 @@ void *ft_memchr(const void *src, int c, size_t n)
 	{
 		(src)++;
 	}
-	return (src);
+	return ((char *)src);
 }

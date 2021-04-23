@@ -1,14 +1,14 @@
-char *ft_strchr(const char *src, int c)
+char *ft_strrchr(const char *src, int c)
 {
 	char *aux;
 
-	aux = src;
+	aux = (char *)src;
 	while(*src)
 	{
 		src++;
 		if (*src == c)
-			aux = src;
+			aux = (char *)src;
 	}
 
-	return (*src ? src : aux);
+	return ((*src) ? (char *)(src) : aux);
 }

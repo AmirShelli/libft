@@ -14,8 +14,6 @@ char *ft_strncat(char *dest, char *src, unsigned int nb)
     {
         dest[i] = src[i];
         i++;
-        printf("%d\n", i);
-        printf("%c\n", src[i]);
     }
     while(dest[i])
     {

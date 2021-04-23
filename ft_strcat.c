@@ -15,7 +15,7 @@ char	*ft_strcat(char *dest, char *src)
 	char *sta;
 	int		i;
 
-	*sta = dest;
+	sta = dest;
 	while (*dest)
 	{
 		dest++;
