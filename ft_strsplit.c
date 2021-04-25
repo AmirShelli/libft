@@ -11,21 +11,6 @@ static void ft_skipstr(char **str, int (*ft_is)(char c), int check)
 		(*str)++;
 }
 
-static char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-    unsigned int i;
-
-    i = 0;
-    while ((i < n) && (*src)) 
-    {
-        dest[i] = *src;
-		src++;
-        i++;
-    }
-    dest[i] = '\0';
-    return (dest);
-}
-
 static int ft_words(char* str)
 {
   int result = 0;
@@ -54,7 +39,7 @@ static int ft_fwordlen(char* str)
 	return (result);
 }
 
-char **ft_split(char* str)
+char	**ft_split(char* str)
 {
   char** result = (char **)malloc(ft_words(str));
   char** aux;

@@ -1,4 +1,4 @@
-char * strstr (char * str1, const char * str2 )
+char	*ft_strstr (char * str1, const char * str2)
 {
 	char *aux1;
 	char *aux2;

@@ -1,22 +1,5 @@
 #include "libft.h"
 
-static void ft_putchar_fd(char c, int fd)
-{
-	read(fd, &c, 1);
-}
-
-static void ft_putstr_fd(char *str, int fd)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		read(fd, &str[i], 1);
-		i++;
-	}
-}
-
 void	ft_putnbr_fd(int nbr, int fd)
 {
 	if (nbr < 0)
