@@ -1,14 +1,21 @@
+#include "libft.h"
+
 char	*ft_strrchr(const char *src, int c)
 {
-	char *aux;
+	char	*aux;
+	char	*ptr;
 
+	ptr = (char *)src;
 	aux = (char *)src;
-	while(*src)
+	while (*ptr)
 	{
-		src++;
-		if (*src == c)
-			aux = (char *)src;
+		if (*ptr == (char)c)
+			aux = (char *)ptr;
+		ptr++;
 	}
-
-	return ((*src) ? (char *)(src) : aux);
+	if (*ptr == (char)c)
+		return (ptr);
+	if (*aux == (char)c)
+		return (aux);
+	return (NULL);
 }
