@@ -1,4 +1,6 @@
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	return (((c >= 'A') && (c <= 'Z')) ? c : c + 32);
+	if ((c >= 'a') && (c <= 'z'))
+		return (c - 32);
+	return (c);
 }

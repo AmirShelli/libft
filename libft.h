@@ -6,14 +6,16 @@
 #include <fcntl.h>
 #include <unistd.h>
 int		ft_atoi(char *str);
-int		ft_isdigit(char c);
+int		ft_memcmp(const void *buff1, const void *buff2, size_t n);
+int		ft_isdigit(int c);
 void	ft_bzero(void *s, size_t n);
-int		ft_isalpha(char c);
+int		ft_isalpha(int c);
+int		ft_isalnum(int x);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 char	*ft_itoa(int n);
 void	*ft_memalloc(size_t size);
-void 	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memchr(const void *src, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	ft_memdel(void **ap);
