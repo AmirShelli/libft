@@ -12,14 +12,22 @@
 
 #include "libft.h"
 
-int		ft_atoi(char *str)
+static int	ft_isspace(int c)
 {
-	int sign;
-	int num;
+	return (c == ' ' || c == '\t' || c == '\n' \
+		|| c == '\v' || c == '\f' || c == '\r');
+}
+
+int	ft_atoi(char *str)
+{
+	int	sign;
+	int	num;
 
 	sign = 1;
 	num = 0;
-	while (*str && (!ft_isdigit(*str)))
+	while (*str && (ft_isspace(*str)))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			sign *= -1;
