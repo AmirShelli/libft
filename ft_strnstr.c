@@ -8,14 +8,14 @@ char	*ft_strnstr(const char *big, const char *small, size_t n)
 
 	check = 0;
 	if (!(*small))
-		return (big);
+		return ((char *)big);
 	while (*big && n--)
 	{
-		aux_big = big;
-		aux_small = small;
+		aux_big = (char *)big;
+		aux_small = (char *)small;
 		while (*aux_big == *aux_small && *aux_small)
 		{
-			aux_big = big;
+			aux_big = (char *)big;
 			aux_big++;
 			aux_small++;
 		}
