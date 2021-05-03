@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
-#include <unistd.h>
+//#include <unistd.h>
 int		ft_atoi(char *str);
 int		ft_memcmp(const void *buff1, const void *buff2, size_t n);
 int		ft_isdigit(int c);

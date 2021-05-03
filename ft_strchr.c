@@ -5,9 +5,11 @@ char	*ft_strchr(const char *src, int c)
 	char	*aux;
 
 	aux = (char *)src;
-	while (*aux != c && *aux)
+	while (*aux)
+	{
+		if (*aux == c)
+			return (aux);
 		aux++;
-	if (*aux == (char)c)
-		return (aux);
+	}
 	return (NULL);
 }

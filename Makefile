@@ -3,12 +3,12 @@ FLAGS = -Wall -Wextra -Werror
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 NAME = libft.a
-.PHONY: all clean fclean $(NAME)
+.PHONY: all $(NAME) clean fclean 
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs libft.a $(OBJS) 
+	ar rcs $(NAME) $(OBJS) 
 .c.o:
 	$(CC) $(CFLAGS) -c $<  -o $@
 # so:
