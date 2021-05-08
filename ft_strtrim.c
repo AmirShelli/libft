@@ -1,23 +1,25 @@
 #include "libft.h"
 
-static int	ft_isspace(int c)
+static int	ft_isin(char c, const char *set)
 {
-	return (c == ' ' || c == '\t' || c == '\n' \
-		|| c == '\v' || c == '\f' || c == '\r');
+	while (*set)
+		if (c == *set++)
+			return (1);
+	return (0);
 }
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s, char const *set)
 {
 	size_t		size;
 	char		*result;
 
 	if (!s)
 		return (NULL);
-	while (*s && ft_isspace(*s))
+	while (*s && ft_isin(*s, set))
 		s++;
 	size = ft_strlen(s);
-	while (size && ft_isspace(*s))
+	while (size && ft_isin(s[size - 1], set))
 		size--;
-	result = ft_strsub(result, s, size + 1);
+	result = ft_substr(s, 0, size);
 	return (result);
 }

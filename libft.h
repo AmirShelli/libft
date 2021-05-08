@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
-//#include <unistd.h>
+#include <unistd.h>
 int		ft_atoi(char *str);
 int		ft_memcmp(const void *buff1, const void *buff2, size_t n);
 int		ft_isdigit(int c);
@@ -13,6 +13,7 @@ int		ft_isalpha(int c);
 int		ft_isalnum(int x);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_itoa(int n);
 void	*ft_memalloc(size_t size);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
@@ -52,10 +53,10 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strnew(size_t size);
 char	*ft_strnstr(const char *str1, const char *str2, size_t n);
 char	*ft_strrchr(const char *src, int c);
-char	**ft_split(char* str);
+char	**ft_split(char* str, char c);
 char	*ft_strstr (char * str1, const char * str2);
-char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-void	*calloc(size_t nmemb, size_t size);
+char	*ft_strtrim(char const *s, char const *set);
 #	endif
