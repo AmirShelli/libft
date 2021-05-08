@@ -1,13 +1,13 @@
 #include "libft.h"
 
-int ft_strnequ(char const *s1, char const *s2, size_t n)
+int	ft_strnequ(char const *s_st, char const *s_nd, size_t n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
-	while ((s1[i] == s2[i]) && (s1[i]) && (s2[i]) && (i < n))
-	{
+	if (!s_st || !s_nd)
+		return (0);
+	while ((s_st[i] == s_nd[i]) && (s_st[i]) && (s_nd[i]) && (i < n))
 		i++;
-	}
-	return (s1[i] == s2[i]);
+	return (s_st[i] == s_nd[i]);
 }

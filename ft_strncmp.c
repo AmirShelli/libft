@@ -1,14 +1,14 @@
 #include <stdio.h>
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s_st, char *s_nd, unsigned int n)
 {
 	unsigned int	i;
-	unsigned char	*ptr1;
-	unsigned char	*ptr2;
+	unsigned char	*aux_st;
+	unsigned char	*aux_nd;
 
 	i = 0;
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	while (ptr1[i] == ptr2[i] && ptr1[i] && ptr2[i] && i < n - 1)
+	aux_st = (unsigned char *)s_st;
+	aux_nd = (unsigned char *)s_nd;
+	while (aux_st[i] == aux_nd[i] && aux_st[i] && aux_nd[i] && i < n - 1)
 		i++;
-	return (ptr1[i] - ptr2[i]);
+	return (aux_st[i] - aux_nd[i]);
 }

@@ -1,18 +1,18 @@
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s_st, const void *s_nd, size_t n)
 {
-	unsigned char	*aux1;
-	unsigned char	*aux2;
+	unsigned char	*aux_st;
+	unsigned char	*aux_nd;
 
-	aux1 = (unsigned char *)s1;
-	aux2 = (unsigned char *)s2;
+	aux_st = (unsigned char *)s_st;
+	aux_nd = (unsigned char *)s_nd;
 	while (n--)
 	{
-		if (*aux1 != *aux2)
-			return ((unsigned char)*aux1 - (unsigned char)*aux2);
-		aux1++;
-		aux2++;
+		if (*aux_st != *aux_nd)
+			return ((unsigned char)*aux_st - (unsigned char)*aux_nd);
+		aux_st++;
+		aux_nd++;
 	}
 	return (0);
 }

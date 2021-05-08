@@ -2,20 +2,20 @@
 
 char	*ft_strrchr(const char *src, int c)
 {
-	char	*aux;
-	char	*ptr;
+	char	*ptr_src;
+	char	*aux_src;
 
-	ptr = (char *)src;
-	aux = (char *)src;
-	while (*ptr)
+	ptr_src = (char *)src;
+	aux_src = (char *)src;
+	while (*ptr_src)
 	{
-		if (*ptr == (char)c)
-			aux = (char *)ptr;
-		ptr++;
+		if (*ptr_src == (char)c)
+			aux_src = (char *)ptr_src;
+		ptr_src++;
 	}
-	if (*ptr == (char)c)
-		return (ptr);
-	if (*aux == (char)c)
-		return (aux);
+	if (*ptr_src == (char)c)
+		return (ptr_src);
+	if (*aux_src == (char)c)
+		return (aux_src);
 	return (NULL);
 }

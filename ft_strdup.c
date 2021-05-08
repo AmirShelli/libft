@@ -22,11 +22,7 @@ char	*ft_strdup(char *src)
 	if (!aux || !src)
 		return (NULL);
 	while (*src)
-	{
-		*aux = *src;
-		aux++;
-		src++;
-	}
+		*aux++ = *src++;
 	*aux = '\0';
 	return (copy);
 }

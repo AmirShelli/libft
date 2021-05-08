@@ -2,11 +2,13 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*anything;
+	void	*ptr;
 
-	anything = malloc(nmemb * size);
-	if (!anything)
-		return (NULL);
-	ft_bzero(anything, size * nmemb);
-	return (anything);
+	ptr = malloc(nmemb * size);
+	if (ptr)
+	{	
+		ft_bzero(ptr, size * nmemb);
+		return (ptr);
+	}
+	return (NULL);
 }

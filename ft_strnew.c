@@ -2,19 +2,11 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *str;
-	int i;
+	char	*str;
 
-	str = (char *)malloc(size);
-	i = 0;
-	if (str)
-	{
-		while( i < size)
-		{
-			str[i] = '\0';
-			i++;
-		}
-		return (str);
-	}	
-	return (NULL);
+	str = (char *)malloc(size + 1);
+	if (!str)
+		return (NULL);
+	ft_bzero(str, size + 1);
+	return (str);
 }

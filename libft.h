@@ -1,10 +1,10 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <unistd.h>
 int		ft_atoi(char *str);
 int		ft_memcmp(const void *buff1, const void *buff2, size_t n);
 int		ft_isdigit(int c);
@@ -53,10 +53,10 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strnew(size_t size);
 char	*ft_strnstr(const char *str1, const char *str2, size_t n);
 char	*ft_strrchr(const char *src, int c);
-char	**ft_split(char* str, char c);
-char	*ft_strstr (char * str1, const char * str2);
+char	*ft_strstr(char *big, const char *small);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strtrim(char const *s, char const *set);
+char	**ft_split(char* str, char c);
 #	endif

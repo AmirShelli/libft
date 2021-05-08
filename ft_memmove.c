@@ -6,9 +6,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*aux_dest;
 	size_t				i;
 
+	i = 0;
 	aux_src = (unsigned char *)src;
 	aux_dest = (unsigned char *)dest;
-	i = 0;
 	if (!(dest) && !(src))
 		return (NULL);
 	if (aux_src > aux_dest)

@@ -1,8 +1,6 @@
-void ft_striter(char *s, void (*f)(char *))
+void	ft_striter(char *s, void (*f)(char *))
 {
-	while(*s)
-	{
-		f(s);
-		s++;
-	}
+	if (s)
+		while (*s)
+			f(s++);
 }
