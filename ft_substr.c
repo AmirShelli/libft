@@ -9,7 +9,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t size)
 	str_aux = str;
 	if (!str || !s)
 		return (NULL);
-	if (start < ft_strsize(s))
+	if (start < ft_strlen(s))
 	{
 		while (*(s + start) && size--)
 			*str++ = *(s++ + start);
