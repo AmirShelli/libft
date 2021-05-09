@@ -1,20 +1,20 @@
-CC = gcc
 FLAGS = -Wall -Wextra -Werror
 SRCS = $(shell find . ! -name "*_bonus.c" -name "*.c")
 OBJS = $(SRCS:.c=.o)
+HEADER = libft.h
 BNS = $(wildcard *_bonus.c)
 BNO = $(BNS:.c=.o)
 NAME = libft.a
-.PHONY: all $(NAME) clean fclean bonus
+.PHONY: all clean fclean bonus
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 bonus: $(BNO)
-	ar rcs $(NAME) $(OBJS) $(BNO)
-.c.o:
-	$(CC) $(CFLAGS) -c $<  -o $@
+	@make OBJS:="$(OBJS) $(BNO)" $(NAME)
+.c.o: $(HEADER) $(BNS) $(SRCS)
+	gcc $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJS) $(BNO)
 fclean: clean
