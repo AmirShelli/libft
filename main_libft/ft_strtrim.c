@@ -2,10 +2,9 @@
 
 static int	ft_isin(char c, const char *set)
 {
-	while (*set)
-		if (c == *set++)
-			return (1);
-	return (0);
+	while (*set && c != *set)
+		set++;
+	return (c == *set);
 }
 
 char	*ft_strtrim(char const *s, char const *set)

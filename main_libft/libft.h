@@ -19,7 +19,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_atoi(char *str);
 int		ft_memcmp(const void *buff1, const void *buff2, size_t n);
 int		ft_isdigit(int c);
@@ -73,5 +73,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strtrim(char const *s, char const *set);
-char	**ft_split(char* str, char c);
+char	**ft_split(char *str, char c);
 #	endif

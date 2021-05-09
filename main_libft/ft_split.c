@@ -6,7 +6,7 @@ static void	ft_skipspl(char **str, char spl)
 		(*str)++;
 }
 
-int	ft_firstlen(char *str, char spl)
+static int	ft_firstlen(char *str, char spl)
 {
 	int	wordlen;
 
