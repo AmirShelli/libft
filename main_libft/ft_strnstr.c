@@ -2,7 +2,7 @@
 
 char	*ft_strnstr(const char *big, const char *small, size_t n)
 {
-	int		i;
+	size_t		i;
 
 	if (!*small || !small)
 		return ((char *)big);

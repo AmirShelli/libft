@@ -4,7 +4,8 @@ static void	ft_arrclean(char **arr)
 {
 	int	i;
 
-	while(arr[i])
+	i = 0;
+	while (arr[i])
 	{
 		free(arr[i]);
 		arr[i++] = NULL;
@@ -52,30 +53,24 @@ static int	ft_countwords(char *str, char spl)
 char	**ft_split(char *str, char spl)
 {
 	char	**splitted;
-	int		n_words;
-	int		fstwordlen;
 	int		i;
 
 	i = 0;
-	if (!str)
-		return (NULL);
-	n_words = ft_countwords(str, spl);
-	splitted = (char **)malloc((n_words + 1) * sizeof(char *));
+	splitted = (char **)malloc((ft_countwords(str, spl) + 1) * sizeof(char *));
 	if (!splitted)
 		return (NULL);
-	while (n_words--)
+	while (ft_countwords(str, spl))
 	{
 		ft_skipspl(&str, spl);
 		if (*str)
 		{
-			fstwordlen = ft_firstlen(str, spl);
-			splitted[i++] = ft_substr(str, 0, fstwordlen);
+			splitted[i++] = ft_substr(str, 0, ft_firstlen(str, spl));
 			if (!splitted[i - 1])
 			{
 				ft_arrclean(splitted);
 				return (NULL);
 			}
-			str = str + fstwordlen;
+			str = str + ft_firstlen(str, spl);
 		}
 	}
 	splitted[i] = NULL;

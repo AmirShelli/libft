@@ -5,7 +5,7 @@ HEADER = libft.h
 BNS = $(wildcard ft_lst*.c)
 BNO = $(BNS:.c=.o)
 NAME = libft.a
-.PHONY: all clean fclean
+.PHONY: all clean fclean bonus
 
 all: $(NAME)
 

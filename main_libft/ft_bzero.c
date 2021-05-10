@@ -3,7 +3,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	char	*aux_s;
-	int		i;
+	size_t	i;
 
 	aux_s = s;
 	i = 0;
