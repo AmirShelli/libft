@@ -1,5 +1,18 @@
 #include "libft.h"
 
+static void	ft_arrclean(char **arr)
+{
+	int	i;
+
+	while(arr[i])
+	{
+		free(arr[i]);
+		arr[i++] = NULL;
+	}
+	free(arr);
+	arr = NULL;
+}
+
 static void	ft_skipspl(char **str, char spl)
 {
 	while (**str && **str == spl)
@@ -47,7 +60,7 @@ char	**ft_split(char *str, char spl)
 	if (!str)
 		return (NULL);
 	n_words = ft_countwords(str, spl);
-	splitted = (char **)malloc((n_words + 1) * sizeof(char **));
+	splitted = (char **)malloc((n_words + 1) * sizeof(char *));
 	if (!splitted)
 		return (NULL);
 	while (n_words--)
@@ -57,6 +70,11 @@ char	**ft_split(char *str, char spl)
 		{
 			fstwordlen = ft_firstlen(str, spl);
 			splitted[i++] = ft_substr(str, 0, fstwordlen);
+			if (!splitted[i - 1])
+			{
+				ft_arrclean(splitted);
+				return (NULL);
+			}
 			str = str + fstwordlen;
 		}
 	}

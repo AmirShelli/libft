@@ -1,11 +1,11 @@
 FLAGS = -Wall -Wextra -Werror
-SRCS = $(shell find . ! -name "*_bonus.c" -name "*.c")
+SRCS = $(shell find . ! -name "ft_lst*.c" -name "*.c")
 OBJS = $(SRCS:.c=.o)
 HEADER = libft.h
-BNS = $(wildcard *_bonus.c)
+BNS = $(wildcard ft_lst*.c)
 BNO = $(BNS:.c=.o)
 NAME = libft.a
-.PHONY: all clean fclean bonus
+.PHONY: all clean fclean
 
 all: $(NAME)
 
