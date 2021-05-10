@@ -6,7 +6,7 @@ static int	ft_isspace(int c)
 		|| c == '\v' || c == '\f' || c == '\r');
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int			sign;
 	long int	num;

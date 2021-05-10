@@ -50,7 +50,7 @@ static int	ft_countwords(char *str, char spl)
 	return (n_words);
 }
 
-char	**ft_split(char *str, char spl)
+char	**ft_split(const char *str, char spl)
 {
 	char	**splitted;
 	int		i;
