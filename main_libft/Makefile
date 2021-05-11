@@ -9,12 +9,12 @@ NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 	ar rcs $(NAME) $(OBJS)
 bonus: $(BNO)
 	@make OBJS:="$(OBJS) $(BNO)" $(NAME)
-.c.o: $(HEADER) $(BNS) $(SRCS)
-	gcc $(CFLAGS) -c $< -o $@
+.c.o: $(BNS) $(SRCS)
+	gcc $(FLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJS) $(BNO)
 fclean: clean
