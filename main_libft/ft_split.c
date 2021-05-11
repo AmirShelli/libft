@@ -14,13 +14,13 @@ static void	ft_arrclean(char **arr)
 	arr = NULL;
 }
 
-static void	ft_skipspl(char **str, char spl)
+static void	ft_skipspl(const char **str, char spl)
 {
 	while (**str && **str == spl)
 		(*str)++;
 }
 
-static int	ft_firstlen(char *str, char spl)
+static int	ft_firstlen(const char *str, char spl)
 {
 	int	wordlen;
 
@@ -33,7 +33,7 @@ static int	ft_firstlen(char *str, char spl)
 	return (wordlen);
 }
 
-static int	ft_countwords(char *str, char spl)
+static int	ft_countwords(const char *str, char spl)
 {
 	int	n_words;
 

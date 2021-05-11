@@ -6,21 +6,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*next;
 	t_list	*tmp;
 
-	if (!lst)
-		return (NULL);
-	new_lst = ft_lstnew(f(lst->content));
-	tmp = new_lst;
-	while (lst->next)
+	new_lst = NULL;
+	while (lst)
 	{
-		next = (struct s_list *)malloc(sizeof(t_list *));
-		if (!next || !new_lst)
+		next = ft_lstnew((*f)(lst->content));
+		if (!next)
 		{
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}
-		next = ft_lstnew(f(lst->content));
-		tmp->next = next;
-		tmp = next;
+		ft_lstadd_back(&new_lst, next);
+		tmp = new_lst->next;
 		lst = lst->next;
 	}
 	return (new_lst);
